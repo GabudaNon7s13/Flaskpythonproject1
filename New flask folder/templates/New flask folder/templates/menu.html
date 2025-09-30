@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Head Over Beans Café | Menu</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #fdf6f0;
+      color: #3e2723;
+    }
+
+    /* Header */
+    header {
+      background: #6d4c41;
+      color: white;
+      padding: 15px 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    header img {
+      width: 60px;
+    }
+
+    header h1 {
+      margin: 10px 0;
+    }
+
+    header nav ul {
+      list-style: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    header nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section */
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    #menu h2 {
+      margin-bottom: 30px;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      display: block;
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.03);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .menu-label {
+      text-align: center;
+    }
+
+    .menu-label h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .menu-label p {
+      font-size: 1rem;
+      color: #6d4c41;
+    }
+
+    /* Footer */
+    footer {
+      background: #4e342e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="https://www.freepnglogos.com/uploads/coffee-logo-png/deja-brew-cafe-logo-dejacafe-20.png" alt="Head Over Beans Logo">
+    <h1>Head Over Beans Café</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+
+      <!-- Menu Items -->
+      <a href="espresso.html" class="menu-item">
+        <img src="images/espresso.jpeg" alt="Espresso - ₹280">
+        <div class="menu-label">
+          <h3>Espresso</h3>
+          <p>₹280</p>
+        </div>
+      </a>
+
+      <a href="cappuccino.html" class="menu-item">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="Cappuccino - ₹380">
+        <div class="menu-label">
+          <h3>Cappuccino</h3>
+          <p>₹380</p>
+        </div>
+      </a>
+
+      <a href="latte.html" class="menu-item">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="Latte - ₹396">
+        <div class="menu-label">
+          <h3>Latte</h3>
+          <p>₹396</p>
+        </div>
+      </a>
+
+      <a href="mocha.html" class="menu-item">
+        <img src="images/mocha.jpeg" alt="Mocha - ₹420">
+        <div class="menu-label">
+          <h3>Mocha</h3>
+          <p>₹420</p>
+        </div>
+      </a>
+
+      <a href="coldbrew.html" class="menu-item">
+        <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&q=80" alt="Cold Brew - ₹352">
+        <div class="menu-label">
+          <h3>Cold Brew</h3>
+          <p>₹352</p>
+        </div>
+      </a>
+
+      <a href="cakes.html" class="menu-item">
+        <img src="images/cake.jpeg" alt="Cakes - ₹500 - ₹1500">
+        <div class="menu-label">
+          <h3>Cakes</h3>
+          <p>₹500 - ₹1500</p>
+        </div>
+      </a>
+
+      <a href="pastries.html" class="menu-item">
+        <img src="images/pastry.jpeg" alt="Pastries - ₹200 - ₹600">
+        <div class="menu-label">
+          <h3>Pastries</h3>
+          <p>₹200 - ₹600</p>
+        </div>
+      </a>
+
+      <a href="breads.html" class="menu-item">
+        <img src="images/breads.jpeg" alt="Breads - ₹90 - ₹120">
+        <div class="menu-label">
+          <h3>Breads</h3>
+          <p>₹90 - ₹120</p>
+        </div>
+      </a>
+
+      <a href="brownies.html" class="menu-item">
+        <img src="images/brownies.jpeg" alt="Brownies - ₹110 - ₹1500">
+        <div class="menu-label">
+          <h3>Brownies</h3>
+          <p>₹110 - ₹1500</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Head Over Beans Café. All rights reserved.</p>
+  </footer>
+</body>
+</html>
