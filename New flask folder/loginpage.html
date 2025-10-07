@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Head Over Beans</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+      height: 80vh;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .login-container {
+      background: #ceaa9c;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .login-container h2 {
+      font-family: cursive;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #6b4f3b;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #6b4f3b;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus {
+      border-color: #a9745f;
+      outline: none;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #a9745f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .login-btn:hover {
+      background-color: #8b5c48;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Welcome to Head Over Beans</h2>
+    <form action="/loginpage" method="POST">
+      <div class="form-group">
+        <label for="email">Email address</label> 
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label> 
+        <input type="password" id="password" name="password" required placeholder="Enter your password" />
+      </div>
+      
+      {% if error %}
+        <p style="color: red; text-align: center;">{{ error }}</p>
+      {% endif %}
+      
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+    <p class="footer-text"><a href="/signup">Don't have an account?</a></p>
+  </div>
+</body>
+</html>
