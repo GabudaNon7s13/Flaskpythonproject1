@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Placed! - Head Over Beans</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Using the same background as the login/signup pages */
+      background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .checkout-container {
+      background: #ceaa9c;
+      padding: 3rem 4rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .checkout-container h2 {
+      font-family: cursive;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #6b4f3b;
+    }
+
+    .checkout-container p {
+      font-size: 1.1rem;
+      color: #4e342e;
+      margin-bottom: 2rem;
+    }
+
+    .home-btn, .menu-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: #a9745f;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-btn:hover, .menu-btn:hover {
+      background-color: #8b5c48;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>🎉 Order Placed!</h2>
+    <p>Thank you for your order. We're busy preparing your delicious coffee and treats!</p>
+    
+    <a href="{{ url_for('menu') }}" class="menu-btn">Continue Shopping</a>
+    
+    <a href="{{ url_for('home') }}" class="home-btn">Go to Home</a>
+  </div>
+</body>
+</html>

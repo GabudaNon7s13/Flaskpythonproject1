@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Head Over Beans Café | Menu</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #e4c6ad;
+      color: #3e2723;
+    }
+
+    /* Header */
+header {
+  background: #6d4c41;
+  color: white;
+  padding: 20px 20px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+header img {
+  width: 80px;
+  display: block;
+  
+  height: auto;
+}
+
+/* Title */
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Navigation */
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px;
+}
+
+header nav ul li {
+  margin: 0 10px;
+  color: #6d4c41;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a div:hover {
+  background-color: #a1887f; /* hover block */
+  color: bisque;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0 2px;
+}
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid #4e342e; /* Corrected: added 'solid' */
+  border-radius: 5px;
+}
+
+.logout-button a {
+  /* These properties are good and make the button visible and sized */
+  background-color: #ffcc80;
+  color: #3e2723;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button a:hover {
+  background-color: #ffb74d;
+}
+
+  .login-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid #4e342e; /* Corrected: added 'solid' */
+  border-radius: 5px;
+}
+
+.login-button a {
+  /* These properties are good and make the button visible and sized */
+  background-color: #ffcc80;
+  color: #3e2723;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-button a:hover {
+  background-color: #ffb74d;
+}
+
+.signup-button {
+  position: absolute;
+  top: 20px;
+  right: 120px; 
+  border: 1px solid #4e342e; 
+  border-radius: 5px;
+}
+
+.signup-button a {
+  background-color: #ffcc80;
+  color: #3e2723;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-button a:hover {
+  background-color: #ffb74d;}
+
+  .cart {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  width: 250px;
+  background: #fff8f0;
+  border: 2px solid #6d4c41;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1001;
+  font-size: 0.9rem;
+  display: none; /* Hidden by default */
+}
+
+.cart h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#cart ul {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+#cart ul li {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+}
+
+#cart-total {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+    /* Section */
+    section {
+      padding-top: 15%;
+      
+      text-align: center;
+    }
+
+    #menu h2 {
+      margin-bottom: 30px;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      display: block;
+      background: #fff8f0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.03);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .menu-label {
+      text-align: center;
+    }
+
+    .menu-label h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .menu-label p {
+      font-size: 1rem;
+      color: #6d4c41;
+    }
+
+    /* Footer */
+    footer {
+      background: #4e342e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    {% if user_name %}
+        <div class="user-display">
+            <span style="font-weight: bold; margin-right: 15px;">Welcome, {{ user_name }}!</span>
+            <a href="/logout" class="logout-button">Logout</a> 
+        </div>
+        
+        {% if cart %} 
+            <div id="cart">
+                <h3>🛒 Your Cart</h3>
+                <ul>
+                    {% for item in cart %}
+                    <li>{{ item.name }} - ₹{{ item.price }}</li>
+                    {% endfor %}
+                </ul>
+                <p id="cart-total"><strong>Total:</strong> ₹{{ cart | sum(attribute='price') }}</p>
+                <div class="checkout-button">
+                    <a href="/address" style="text-decoration: none; padding: 5px 10px; background-color: #a9745f; color: white; border-radius: 5px;">Checkout</a>
+                </div>
+            </div>
+        {% endif %}
+
+    {% else %}
+    <div class="login-button">
+      <a href="/loginpage">Login</a></div>
+    <div class="signup-button">
+      <a href="/signup">Sign-Up</a></div>
+    {% endif %}
+    
+    <img src="https://www.freepnglogos.com/uploads/coffee-logo-png/deja-brew-cafe-logo-dejacafe-20.png" alt="Head Over Beans Logo">
+    <h1>Head Over Beans Café</h1>
+    <nav>
+      <ul>
+        <li><a href="/"><div>Home</div></a></li>
+        <li><a href="/menu"><div>Menu</div></a></li>
+        <li><a href="/#about"><div>About</div></a></li>
+        <li><a href="/#contact"><div>Contact</div></a></li>
+      </ul>
+    </nav>
+</header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-grid">
+
+
+      {% for id, item in menu_items.items() %}
+        
+        <a href="{% if user_name %}{{ url_for('add_to_cart', item_id=id) }}{% else %}{{ url_for('loginpage') }}{% endif %}" 
+           class="menu-item">
+          
+          {% if id == 1 %}
+            <img src="https://blogstudio.s3.theshoppad.net/coffeeheroau/ec178d83e5f597b162cda1e60cb64194.jpg" alt="{{ item.name }}">
+          {% elif id == 2 %}
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80" alt="{{ item.name }}">
+          {% elif id == 3 %}
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" alt="{{ item.name }}">
+          {% elif id == 4 %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWWi1J7zxNNLU9VQa_WYclwb2w9UNDo2mA0w&s" alt="{{ item.name }}">
+          {% elif id == 5 %}
+            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=400&q=80" alt="{{ item.name }}">
+          {% elif id == 6 %}
+            <img src="https://thescranline.com/wp-content/uploads/2023/06/RED-VELVET-CAKE-23-S-01.jpg" alt="{{ item.name }}">
+          {% elif id == 7 %}
+            <img src="https://merakcakes.com/cdn/shop/files/IMG_0677.jpg?v=1745236590" alt="{{ item.name }}">
+          {% elif id == 8 %}
+            <img src="https://tatyanaseverydayfood.com/wp-content/uploads/2023/08/Pineapple-Coconut-Pina-Colada-Cake-Recipe-1.jpg" alt="{{ item.name }}">
+          {% elif id == 9 %}
+            <img src="https://www.muffinscakes.com/files/catalog/New%20Photoshoot%20Cakes/Strawberry%20Pastry.JPG" alt="{{ item.name }}">
+          {% elif id == 10 %}
+            <img src="https://img.cake24x7.com/writable/apps/cake24x7/ProductGallery/5973/Thumb/Vanilla-Pastry-With-Cherry.jpg" alt="{{ item.name }}">
+          {% elif id == 11 %}
+            <img src="https://thedessertlounge.in/wp-content/uploads/2025/01/IMG_5549-scaled.jpg" alt="{{ item.name }}">
+          {% elif id == 12 %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZSNs3WQcFES0wxGcMm1K_kaRSqbqaees1g&s" alt="{{ item.name }}">
+          {% elif id == 13 %}
+            <img src="https://cafedelites.com/wp-content/uploads/2018/02/Best-Fudgiest-Brownies-IMAGE-1001.jpg" alt="{{ item.name }}">
+          {% elif id == 14 %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB2u4-GTx3n9MpNDdG-WgdjQA2Zoc-lYRm3A&s" alt="{{ item.name }}">
+          {% elif id == 15 %}
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRApKIAM74gGFSVxHms_XfvExPfR5yRje0PEg&s" alt="{{ item.name }}">
+          {% elif id == 16 %}
+            <img src="https://i.pinimg.com/736x/6d/ee/09/6dee094cb8e58b2b900f285c4bc5de5a.jpg" alt="{{ item.name }}">
+          {% else %}
+            <img src="" alt="{{ item.name }}">
+          {% endif %}
+
+          <div class="menu-label">
+            <h3>{{ item.name }}</h3>
+            <p>₹{{ item.price }}</p>
+          </div>
+        </a>
+      {% endfor %}
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Head Over Beans Café. All rights reserved.</p>
+  </footer>
+</body>
+</html>
